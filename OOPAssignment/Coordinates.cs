@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOPAssignment
 {
-    public class Coordinates
+    public struct Coordinates
     {
         public long X { get; set; }
         public long Y { get; set; }
