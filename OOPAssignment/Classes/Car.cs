@@ -46,10 +46,11 @@ namespace OOPAssignment.Classes
             }
             else if (Direction == Direction.W)
             {
-                Coordinates.Y--;
+                Coordinates.X--;
             }
 
             Notify();
+
         }
 
         public void Notify()

@@ -66,21 +66,28 @@ namespace OOPAssignment.Classes
             {
                 throw new Exception("Sınır aşıldı");
             }
-
+            var carss = ObservablesCars.FirstOrDefault(c => c.CarId == provider.CarId);
+            if (carss != null)
+            {
+                carss = provider;
+            }
             if (IsCoordinatesEmpty(provider.Coordinates) == true)
             {
                 ObservablesCars.Add(provider);
             }
+
             else
             {
                 var cars = ObservablesCars.FirstOrDefault(c => c.CarId == provider.CarId);
                 if (cars.Coordinates.X == provider.Coordinates.X && cars.Coordinates.Y == provider.Coordinates.Y)
                 {
                     throw new Exception("Çakışma");
+
                 }
                 else
                     ObservablesCars.Add(provider);
             }
+
         }
     }
 }
